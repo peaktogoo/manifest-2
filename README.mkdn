@@ -33,7 +33,7 @@ repo sync
 
 ##   lunch scissor_<devicename>-userdebug ##
   
-##   mka scissor. ## 
+##   mka scissor ## 
 
 
  __      _                           ___ __    
