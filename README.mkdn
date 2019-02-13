@@ -29,9 +29,11 @@ repo sync
 ```
 ## Build Scissor-OS ##
 
-. build/envsetup.sh
-lunch scissor_<devicename>-userdebug
-mka scissor
+##  . build/envsetup.sh ##
+
+##   lunch scissor_<devicename>-userdebug ##
+  
+##   mka scissor. ## 
 
 
  __      _                           ___ __    
