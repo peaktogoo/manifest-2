@@ -8,9 +8,9 @@
   <remote  name="private"
            fetch="ssh://git@github.com" />
 
- <remote name="Scissor"
-           fetch="https://github.com/ScissorOS/"
-           revision="pie" />
+ <remote name="ScissorOS"
+	   revision="pie"
+           fetch="https://github.com/ScissorOS/" />
   
   <remote  name="aosp"
            fetch="https://android.googlesource.com"
@@ -24,7 +24,7 @@
 
   <!-- AOSP Projects -->
 
-  <project path="build/make" name="ScissorOS/android_build" groups="pdk" >
+  <project path="build/make" name="android_build" remote="ScissorOS" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -35,7 +35,7 @@
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" remote="aosp" />
   <project path="build/kati" name="LineageOS/android_build_kati" groups="pdk,tradefed" />
-  <project path="build/soong" name="ScissorOS/android_build_soong" groups="pdk,tradefed" >
+  <project path="build/soong" name="android_build_soong" remote="ScissorOs" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
@@ -669,7 +669,7 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" remote="aosp" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" remote="aosp" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" remote="aosp" />
-
+  <project path="vendor/scissor" name="android_vendor_scissor" remote="ScissorOS" />
   <include name="snippets/lineage.xml" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
